@@ -1,0 +1,17 @@
+<div id="itemListWrapper">
+	<p>Click on buy button to buy the item.</p>
+	<ul class="list-unstyled">
+		<li class="item" ng-repeat="item in cart"
+			style="background: white url('images/{{item.imgUrl}}') no-repeat">
+			<div class="item-description clearfix">
+				<h3>{{item.name}}</h3>
+				<p>{{item.price | currency:'$ '}}</p>
+				<ul class="list-unstyled list-inline">
+					<li>Rating: {{item.rating}}</li>
+				</ul>
+				<p>{{item.description}}</p>
+				<button class="btn btn-primary pull-right" ng-click="buy(item)">Buy</button>
+			</div>
+		</li>
+	</ul>
+</div>

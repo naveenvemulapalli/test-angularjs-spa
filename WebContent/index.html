@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+<meta charset="utf-8">
+<title>Welcome to My Tech Shop!</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/app.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-route.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-animate.js"></script>
+<script src="app.js"></script>
+</head>
+<body class="backgrnd">
+
+	<div id="headerWrapper" ng-controller="headerCtrl">
+	<span class="logo pull-left"><img src="images/logo.jpg"></span>
+	
+		<div class="nav-wrapper pull-left">
+			<ul class="nav nav-pills">
+				<li ng-class="{active: nav.isActive('/home')}"><a href="#/home"><b>Home</b></a></li>
+				<li ng-class="{active: nav.isActive('/items')}"><a href="#/items"><b>Items for sale</b></a></li>
+				<li ng-class="{active: nav.isActive('/cart')}"><a href="#/cart"><b>Shopping Cart</b></a></li>
+				<li ng-class="{active: nav.isActive('/advice')}"><a href="#/advice"><b>Buying Advice</b></a></li>
+				<li ng-class="{active: nav.isActive('/contact')}"><a href="#/contact"><b>Contact Us</b></a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div ng-view class="container"></div>
+
+	<hr/>
+	<div align="center">&copy; My Tech Shop</div>
+<hr/>
+</body>
+</html>

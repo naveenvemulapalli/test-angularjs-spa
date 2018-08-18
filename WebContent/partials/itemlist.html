@@ -1,0 +1,22 @@
+<div id="itemListWrapper">
+	<form role="form">
+	  <div class="form-group">Search Items:
+		<input type="text" class="form-control" placeholder="Search here..." ng-model="searchStr">
+	  </div>
+	</form>
+	<ul class="list-unstyled">
+		<li class="item" ng-repeat="item in items | filter:searchStr"
+			style="background: white url('images/{{item.imgUrl}}') no-repeat">
+			<div class="item-description clearfix">
+				<h3>{{item.name}}</h3>
+				<p>{{item.price | currency:'$ '}}</p>
+				<ul class="list-unstyled list-inline">
+				<li>Type: {{item.type}}</li>
+				<li>Rating: {{item.rating}}</li>
+				</ul>
+				<p>{{item.description}}</p>
+				<button class="btn btn-primary pull-right" ng-click="addToCart(item)">Add to Cart</button>
+			</div>
+		</li>
+	</ul>
+</div>
